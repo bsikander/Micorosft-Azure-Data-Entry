@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ConteoCiudadano.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    My ASP.NET Application
+                </h1>
+            </div>
+            <div class="loginDisplay">
+               <%-- <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>--%>
+                    <asp:Panel ID="plLogin" runat="server">
+                        [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> ]
+                        [ <a href="~/Account/Register.aspx" ID="A1" runat="server">Register</a> ]
+                        </asp:Panel>
+                    <%--</AnonymousTemplate>
+                    <LoggedInTemplate>--%>
+                    <asp:Panel ID="plUsername" runat="server">
+                        Welcome <span class="bold"><asp:Label ID="lblLoginName" runat="server" /></span>!
+                        [ <a href="Logout.aspx" >Logout</a> ]
+                        </asp:Panel>
+                    <%--</LoggedInTemplate>
+                </asp:LoginView>--%>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Inicio" Value="Inicio"/>
+                        <asp:MenuItem Text="Instrucciones" Value="Instrucciones"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="Contacto" Value="Contacto"/>
+                    </Items>
+                </asp:Menu>
+            &nbsp;</div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                <p>
+                    &nbsp;</p>
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CC" Class="ConteoCiudadanoDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=CC;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CCConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Acta" Member="Actas">
+    <Type Name="Acta">
+      <Column Name="Nombre" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Transcripciones" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Acta_Transcripcion" Member="Transcripcions" ThisKey="ID" OtherKey="ActaID" Type="Transcripcion" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Usuario" Member="Usuarios">
+    <Type Name="Usuario">
+      <Column Name="Nick" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(120)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="Usuario_Transcripcion" Member="Transcripcions" ThisKey="ID" OtherKey="UsuarioID" Type="Transcripcion" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Candidato" Member="Candidatos">
+    <Type Name="Candidato">
+      <Column Name="Candidato" Member="Candidato1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="Candidato_Partido" Member="Partidos" ThisKey="ID" OtherKey="CandidatoID" Type="Partido" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Partido" Member="Partidos">
+    <Type Name="Partido">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CandidatoID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Candidato_Partido" Member="Candidato" ThisKey="CandidatoID" OtherKey="ID" Type="Candidato" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Transcripcion" Member="Transcripcions">
+    <Type Name="Transcripcion">
+      <Column Name="FechaHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UsuarioID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VERDE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRI_VERDE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRD_PT_MC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRD_PT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRD_MC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PT_MC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TOTAL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ActaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="Acta_Transcripcion" Member="Acta" ThisKey="ActaID" OtherKey="ID" Type="Acta" IsForeignKey="true" />
+      <Association Name="Usuario_Transcripcion" Member="Usuario" ThisKey="UsuarioID" OtherKey="ID" Type="Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.75, 8.5" name="ConteoCiudadanoDB">
+  <DataContextMoniker Name="/ConteoCiudadanoDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="2abfc856-f4f8-419f-a629-d714f3877dea" absoluteBounds="0.75, 3.875, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/ConteoCiudadanoDBDataContext/Acta" />
+      <nestedChildShapes>
+        <elementListCompartment Id="33535833-b39c-4269-be95-fe12b8101101" absoluteBounds="0.765, 4.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="681f8135-2194-470a-b480-4b94ae2027fa" absoluteBounds="0.75, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ConteoCiudadanoDBDataContext/Usuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ee2f8787-cd13-4805-8a51-ad4558147701" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="726ffd89-deb5-42ac-b239-332fca70415b" absoluteBounds="6.75, 2.25, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/ConteoCiudadanoDBDataContext/Candidato" />
+      <nestedChildShapes>
+        <elementListCompartment Id="46616d1d-8787-4e54-a48e-d4608c021b83" absoluteBounds="6.765, 2.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="751e4220-5eb7-45f4-8489-11be23259157" absoluteBounds="9.5, 2.125, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/ConteoCiudadanoDBDataContext/Partido" />
+      <nestedChildShapes>
+        <elementListCompartment Id="41f5b6b8-2e9c-494d-838e-11888b677938" absoluteBounds="9.515, 2.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0db07029-a6c0-4c97-9d76-aea6d7500969" absoluteBounds="3.5, 2.25, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/ConteoCiudadanoDBDataContext/Transcripcion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a473d220-5d3d-47a0-9a60-16aed8aa99a4" absoluteBounds="3.515, 2.71, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.75 : 2.84699625651042); (9.5 : 2.84699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ConteoCiudadanoDBDataContext/Candidato/Candidato_Partido" />
+      <nodes>
+        <classShapeMoniker Id="726ffd89-deb5-42ac-b239-332fca70415b" />
+        <classShapeMoniker Id="751e4220-5eb7-45f4-8489-11be23259157" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.56814697265625); (3.5 : 4.56814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ConteoCiudadanoDBDataContext/Acta/Acta_Transcripcion" />
+      <nodes>
+        <classShapeMoniker Id="2abfc856-f4f8-419f-a629-d714f3877dea" />
+        <classShapeMoniker Id="0db07029-a6c0-4c97-9d76-aea6d7500969" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.4999995); (4.5 : 1.4999995); (4.5 : 2.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ConteoCiudadanoDBDataContext/Usuario/Usuario_Transcripcion" />
+      <nodes>
+        <classShapeMoniker Id="681f8135-2194-470a-b480-4b94ae2027fa" />
+        <classShapeMoniker Id="0db07029-a6c0-4c97-9d76-aea6d7500969" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
